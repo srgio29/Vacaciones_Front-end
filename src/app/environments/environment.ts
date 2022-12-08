@@ -3,7 +3,7 @@
 // The List of file replacements can be found in 'angular.json' .
 export const environment = {
     production: false, 
-    backend: 'http://localhost:3000/'
+    backend: 'https://vacacionesrailway-production.up.railway.app'
 };
 /*
 For easier debugging in development mode, you can import the following file
