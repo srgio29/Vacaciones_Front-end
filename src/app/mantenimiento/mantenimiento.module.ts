@@ -21,7 +21,7 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzRadioModule } from 'ng-zorro-antd/radio';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { NzSelectModule } from 'ng-zorro-antd/select';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+// import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 
 
@@ -50,8 +50,8 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     NzDatePickerModule,
     NzSelectModule
   ],
-  schemas: [
-    CUSTOM_ELEMENTS_SCHEMA
-  ]
+//  schemas: [
+//    CUSTOM_ELEMENTS_SCHEMA
+//  ]
 })
 export class MantenimientoModule { }

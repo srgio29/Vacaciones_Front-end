@@ -1,5 +1,5 @@
 
 export const environment = {
     production : true,
-    backend : 'https://vacaciones-railway.up.railway.app/'
+    backend : 'https://vacacionesrailway-production.up.railway.app/'
     };

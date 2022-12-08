@@ -1,15 +1,14 @@
 
 <div nz-row nzJustify="center" nzAlign="middle">
     <div nz-col nzSpan="24" nzJustify="center">
-        <h1>Lotes</h1>
+        <h1>Empleados</h1>
     </div>
 </div> 
 <div nz-row>
-    <div nz-col nzSpan="24"><button (click)="mostrar" nz-button nzType="primary">Nuevo Lote</button></div>
+    <div nz-col nzSpan="24"><button (click)="mostrar" nz-button nzType="primary">Nuevo Empleado</button></div>
 </div> 
 <hr>  
 <div nz-row>
-
     <div nz-col nz-Span="24">
         <nz-table #basicTable [nzData]="empleado">
             <thead>
@@ -20,9 +19,11 @@
                     <th>Cargo</th>
                     <th>Estado</th>
                     <th>Acciones</th>
+                </tr>    
             </thead>
             <tbody>
                 <tr *ngFor="let data of basicTable.data; let i=index">
+                    <td>{{i+1}}</td>
                     <td>{{data.nombre}}</td>
                     <td>{{data.fechaIngreso}}</td>
                     <td>{{data.cargoId}}</td>         
@@ -44,16 +45,15 @@
 </div>      
 
 
-
 <nz-modal [(nzVisible)]="visible" nzTitle="Administracion Empleado">
     <ng-container *nzModalContent>
-        <form nz-formnzLayout="vertical" (ngSubmit)="guardar()" [formGroup]="formEmpleado">
+        <form nz-form nzLayout="vertical" (ngSubmit)="guardar()" [formGroup]="formEmpleado">
             <div nz-row [nzGutter]="8">
                 <div nz-col nzSpan="24">
                     <nz-form-item>
                         <nz-form-label>Nombre</nz-form-label>
                         <nz-form-control nzErrorTip="Por favor escriba el dato correcto!">
-                            <input formControlName="empleado" nz-input PlaceHolder="Escriba el nombre del empleado"/>                            
+                            <input formControlName="nombre" nz-input placeholder="Escriba el nombre del empleado"/>                            
                         </nz-form-control>
                     </nz-form-item>
                 </div>
@@ -73,8 +73,8 @@
                     <nz-form-item>
                         <nz-form-label>Cargo</nz-form-label>
                         <nz-form-control nzErrorTip="Por favor escriba el dato correcto!">
-                            <nz-select formControlName="cargoId">
-                                <nz-option> *ngFor="let item of cargo" [nzValue]="item.id" [nzLable]="item.nombre"
+                            <nz-select formControlName="cargoid">
+                                <nz-option> *ngFor="let item of cargo" [nzValue]="item.id" [nzLabel]="item.nombre"
                                 </nz-option>  
                             </nz-select                              >
                         </nz-form-control>
@@ -94,8 +94,7 @@
                     </nz-form-item>
                 </div>
             </div>  
- 
-        </form>                               
+         </form>                               
     </ng-container>
     <div *nzModalFooter>
         <button nz-button nzType="default" (click)="ocultar()">Cancelar</button>
